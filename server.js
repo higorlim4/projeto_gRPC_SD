@@ -14,7 +14,6 @@ const packageDefinition = protoLoader.loadSync(
     }
 );
 
-// Armazena a lista de assentos disponíveis em memória
 const availableSeats = [
     { movie_name: 'The Godfather', session_time: '20:00', seat_number: 'A1', price: 10.0 },
     { movie_name: 'Madagascar', session_time: '20:00', seat_number: 'A2', price: 10.0 },
@@ -33,7 +32,6 @@ function checkAvailability(call, callback) {
     let available = false;
     let price = 0;
 
-    // Procura o assento solicitado na lista de assentos disponíveis
     const seat = availableSeats.find((s) => s.movie_name === movieName && s.session_time === sessionTime && s.seat_number === seatNumber);
 
     if (seat) {
